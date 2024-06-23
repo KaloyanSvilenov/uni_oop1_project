@@ -30,3 +30,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 *.iml
+/src/resources/META-INF/
+/src/resources

@@ -1,0 +1,46 @@
+<email>
+	<private:note xmlns:private="jani@mail.net" receiver="friend">
+		<private:to name="first name">
+			Tove
+		</private:to>
+		<private:from name="first name">
+			Jani
+		</private:from>
+		<private:body text="meeting" style="bold">
+			Don't forget me this weekend!
+		</private:body>
+	</private:note>
+	<public:note xmlns:public="dana@mail.net" receiver="colleage">
+        <public:to name="first name">
+            Alice
+        </public:to>
+        <public:from name="first name">
+            Dana
+        </public:from>
+        <public:body text="long" style="italic">
+            Let's meet for lunch tomorrow.
+        </public:body>
+    </public:note>
+    <wisper:note xmlns:wisper="dana@mail.net" receiver="family">
+        <wisper:to name="first name">
+            Charlie
+        </wisper:to>
+        <wisper:from name="first name">
+            Dana
+        </wisper:from>
+        <wisper:body text="celebration" style="colorful">
+            Happy Birthday! Hope you have a great day!
+        </wisper:body>
+    </wisper:note>
+	<global:note xmlns:global="frank@mail.net" receiver="neighbour">
+    <global:to name="first name">
+        Alice
+    </global:to>
+    <global:from name="first name">
+        Frank
+    </global:from>
+    <global:body text="meeting" style="none">
+        Looking forward to our meeting next week.
+    </global:body>
+	</global:note>
+</email>

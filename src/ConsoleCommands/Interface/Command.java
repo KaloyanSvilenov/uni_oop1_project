@@ -1,4 +1,4 @@
-package BasicCommands;
+package ConsoleCommands.Interface;
 
 public interface Command
 {
