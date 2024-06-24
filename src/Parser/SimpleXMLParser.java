@@ -9,12 +9,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+/**
+ * Класът SimpleXMLParser е отговорен за анализирането на прост XML файл и изграждането на дървовидна структура от обекти Node.
+ */
 public class SimpleXMLParser {
     private String currentNamespace = null;
     private Map<String, Integer> idMap = new HashMap<>();                                                               // map of all ids
     private Map<String, String> namespaceMap = new HashMap<>();                                                         // map of all namespaces
     private Map<Node, Integer> nodeLevelMap = new HashMap<>();                                                          // map of nodes levels in tree
 
+    /**
+     * Parses an XML file and builds a tree structure of Node objects.
+     *
+     * @param filePath the path to the XML file to be parsed
+     * @return the root Node of the parsed XML tree
+     * @throws IOException if an I/O error occurs while reading the file
+     */
     public Node parse(String filePath) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         Stack<Node> stack = new Stack<>();                                                                              // stack of tree nodes
@@ -113,6 +123,12 @@ public class SimpleXMLParser {
         return root;
     }
 
+    /**
+     * Генерира уникален идентификатор за възел.
+     *
+     * @param parent родителския възел
+     * @return генерирания уникален идентификатор
+     */
     private String generateUniqueId(Node parent) {
         if (parent == null) {                                                                                           // root element
             return "1";
@@ -130,6 +146,12 @@ public class SimpleXMLParser {
         return parentId + "." + nodeLevelMap.get(parent);                                                               // new id
     }
 
+    /**
+     * Гарантира, че ID е уникален. Ако идентификаторът вече съществува, добавете номер, за да го направите уникален.
+     *
+     * @param id оригиналния идентификатор
+     * @return уникалния идентификатор
+     */
     private String ensureUniqueId(String id) {                                                                          // validate id if exists
         if (idMap.containsKey(id)) {
             int count = idMap.get(id) + 1;

@@ -8,10 +8,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Класът Invoker отговаря за съпоставянето на потребителските команди към съответните им действия.
+ * Той инициализира набор от предварително дефинирани команди и предоставя метод за слушане и изпълнение на конзолни команди.
+ */
 public class Invoker
 {
     private static Map<String, Command> commands = new HashMap<>();
 
+    // Статичен блок за инициализиране на картата на командите с предварително дефинирани команди.
     static
     {
         commands.put("open", new Open());
@@ -31,16 +36,22 @@ public class Invoker
         commands.put("xpath", new XPath());
     }
 
+    /**
+     * Слуша за конзолни команди от потребителя, анализира входа и изпълнява съответната команда.
+     * Ако командата не бъде разпозната, се показва съобщение за грешка.
+     */
     public void ConsoleCommands()
     {
         Scanner scanner = new Scanner(System.in);
 
+        // Безкраен цикъл за непрекъснато слушане за въвеждане от потребителя
         for (; true; )
         {
             System.out.print("user:~$ ");
             String[] parts = scanner.nextLine().split(" ");
             Command command = commands.get(parts[0]);
 
+            // Изпълнете командата, ако съществува, в противен случай отпечатайте съобщение за грешка
             if (command != null) command.execute(parts);
             else System.out.println("Invalid command. Type 'help' for available commands.");
         }

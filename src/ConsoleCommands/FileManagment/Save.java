@@ -7,8 +7,18 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Класът Save имплементира интерфейса Command и управлява запазването на текущото
+ * отворен XML файл. Той проверява дали даден файл е отворен в момента, записва XML съдържанието
+ * към файла и предоставя обратна връзка за успеха или неуспеха на операцията.
+ */
 public class Save implements Command
 {
+    /**
+     * Изпълнява командата за запазване, за да запази текущо отворения XML файл.
+     *
+     * @param args аргументите на командата. Тази команда не очаква никакви аргументи.
+     */
     public void execute(String[] args)
     {
         try {

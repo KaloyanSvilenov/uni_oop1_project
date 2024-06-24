@@ -2,8 +2,18 @@ package ConsoleCommands.FileManagment;
 
 import ConsoleCommands.Interface.Command;
 
+/**
+ * Класът Help имплементира командния интерфейс и предоставя списък с налични команди
+ * и техните описания при изпълнение.
+ */
 public class Help implements Command
 {
+    /**
+     * Изпълнява командата help. Ако са предоставени твърде много аргументи, ще се покаже подходящо съобщение.
+     * Ако командата е изпълнена правилно, тя отпечатва списък с наличните команди и техните описания.
+     *
+     * @param args аргументите на командата (не се използват в тази команда)
+     */
     public void execute(String[] args)
     {
         if (args.length > 1) {
