@@ -333,7 +333,7 @@ public class Node {
         if (newChildId == null || !newChildId.contains(".")) return false;                                              // if id is invalid
 
         String parentId = null;
-        parentId = newChildId.substring(0, newChildId.lastIndexOf('.'));                                            // get parent id
+        parentId = newChildId.substring(0, newChildId.lastIndexOf('.'));                                                // get parent id
         Node parentNode = findNodeById(parentId);
 
         if (parentNode == null || !parentNode.getContent().isEmpty()) return false;                                     // if parent is invalid
