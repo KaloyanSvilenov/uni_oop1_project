@@ -1,4 +1,4 @@
 ## OOP1 project for university
 
 >[!NOTE]
->You can see the assignment [here](/assignment.pdf)
+>You can see the assignment [here](/assignment.pdf) (Language: Bulgairan)
