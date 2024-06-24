@@ -35,7 +35,7 @@ public class SimpleXMLParser {
 
                 int endIndex = line.indexOf('>');
                 String tagName = line.substring(1, endIndex).trim();                                                    // cut the "<" and ">" from the string
-                String[] tagParts = tagName.split("\\s+");                                                        // split the string on spaces " "
+                String[] tagParts = tagName.split("\\s+");                                                              // split the string on spaces " "
                 tagName = tagParts[0];
 
                 String prefix = null;
@@ -118,7 +118,7 @@ public class SimpleXMLParser {
             return "1";
         }
 
-        int level = (parent.getId().split("\\.").length);                                                        // get level
+        int level = (parent.getId().split("\\.").length);                                                               // get level
 
         if (!nodeLevelMap.containsKey(parent)) {                                                                        // calculate id
             nodeLevelMap.put(parent, 1);
